@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python2
 # coding=utf-8
 # __author__:TaQini
 
@@ -73,14 +73,15 @@ while (fake < 100):
     useful = conn.recvline_contains('N=')
 
     num, fake_tmp = str(useful).split(' ')
-    print('n=',num.strip("b'N="))
+    print 'n=',num.strip("b'N=")
     num = int(num.strip("b'N="))
     fake_num= int(fake_tmp.strip('C=').strip("'"))
     fake +=fake_num
     #fake+=int(fake_tmp.strip("'"))
-    print('fake=',fake)
+    print 'fake=',fake
 
     #保存值
+    #双指针注意
     left_f=0
     right_f=num
     left=0
@@ -114,7 +115,7 @@ while (fake < 100):
 
         
 
-print(conn.recvlines())
+print conn.recvlines()
 
 # debug()
 
